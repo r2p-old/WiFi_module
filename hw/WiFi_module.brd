@@ -129,7 +129,7 @@
 <plain>
 <wire x1="6.55" y1="8" x2="6.55" y2="8.8" width="0.2" layer="41"/>
 <wire x1="6.55" y1="8.8" x2="7.45" y2="8.8" width="0.2" layer="41"/>
-<text x="4" y="6" size="1.5" layer="200" rot="MR90">RF module
+<text x="4" y="6" size="1.5" layer="200" rot="MR90">WiFi module
 v1.0 (2015/02)</text>
 <polygon width="0.2" layer="41">
 <vertex x="25" y="45"/>
