@@ -3379,16 +3379,16 @@ Source: http://datasheets.maxim-ic.com/en/ds/MAX4335-MAX4338.pdf</description>
 <rectangle x1="-2.45" y1="3.25" x2="-2.05" y2="3.45" layer="51" rot="R270"/>
 <rectangle x1="-2.95" y1="3.25" x2="-2.55" y2="3.45" layer="51" rot="R270"/>
 </package>
-<package name="ABRACON_2.5X2">
+<package name="XTAL_2.5X2">
 <circle x="-0.665" y="-0.4" radius="0.1802" width="0" layer="51"/>
-<wire x1="-1" y1="0.95" x2="1" y2="0.95" width="0.2032" layer="51"/>
-<wire x1="1.2" y1="0.75" x2="1.2" y2="-0.75" width="0.2032" layer="51"/>
-<wire x1="1" y1="-0.95" x2="-1" y2="-0.95" width="0.2032" layer="51"/>
-<wire x1="-1.2" y1="-0.75" x2="-1.2" y2="0.75" width="0.2032" layer="51"/>
-<wire x1="-1" y1="0.95" x2="-1.2" y2="0.75" width="0.2032" layer="51" curve="-90"/>
-<wire x1="1.2" y1="0.75" x2="1" y2="0.95" width="0.2032" layer="51" curve="-90"/>
-<wire x1="-1.2" y1="-0.75" x2="-1" y2="-0.95" width="0.2032" layer="51" curve="-90"/>
-<wire x1="1" y1="-0.95" x2="1.2" y2="-0.75" width="0.2032" layer="51" curve="-90"/>
+<wire x1="-1" y1="0.95" x2="1" y2="0.95" width="0.2" layer="51"/>
+<wire x1="1.2" y1="0.75" x2="1.2" y2="-0.75" width="0.2" layer="51"/>
+<wire x1="1" y1="-0.95" x2="-1" y2="-0.95" width="0.2" layer="51"/>
+<wire x1="-1.2" y1="-0.75" x2="-1.2" y2="0.75" width="0.2" layer="51"/>
+<wire x1="-1" y1="0.95" x2="-1.2" y2="0.75" width="0.2" layer="51" curve="-90"/>
+<wire x1="1.2" y1="0.75" x2="1" y2="0.95" width="0.2" layer="51" curve="-90"/>
+<wire x1="-1.2" y1="-0.75" x2="-1" y2="-0.95" width="0.2" layer="51" curve="-90"/>
+<wire x1="1" y1="-0.95" x2="1.2" y2="-0.75" width="0.2" layer="51" curve="-90"/>
 <smd name="1" x="-0.825" y="-0.7625" dx="0.65" dy="0.8" layer="1"/>
 <smd name="2" x="0.825" y="-0.7625" dx="0.65" dy="0.8" layer="1"/>
 <smd name="3" x="0.825" y="0.7625" dx="0.65" dy="0.8" layer="1" rot="R180"/>
@@ -3482,7 +3482,7 @@ Source: http://datasheets.maxim-ic.com/en/ds/MAX4335-MAX4338.pdf</description>
 <pin name="VCC" x="-15.24" y="-5.08" visible="pin" length="middle"/>
 <pin name="VIN" x="-15.24" y="10.16" visible="pin" length="middle"/>
 </symbol>
-<symbol name="ABRACON_OSC">
+<symbol name="OSC">
 <wire x1="-7.62" y1="7.62" x2="-7.62" y2="-7.62" width="0.4064" layer="94"/>
 <wire x1="7.62" y1="-7.62" x2="-7.62" y2="-7.62" width="0.4064" layer="94"/>
 <wire x1="7.62" y1="-7.62" x2="7.62" y2="-5.08" width="0.4064" layer="94"/>
@@ -3522,7 +3522,7 @@ Source: http://datasheets.maxim-ic.com/en/ds/MAX4335-MAX4338.pdf</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="STM32F303C">
+<deviceset name="STM32F303C" prefix="U">
 <gates>
 <gate name="G$1" symbol="STM32F303C" x="0" y="0"/>
 </gates>
@@ -3639,7 +3639,7 @@ Source: http://datasheets.maxim-ic.com/en/ds/MAX4335-MAX4338.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="MAX3051" prefix="SOT23">
+<deviceset name="MAX3051" prefix="U">
 <gates>
 <gate name="G$1" symbol="MAX3051" x="0" y="0"/>
 </gates>
@@ -3661,7 +3661,7 @@ Source: http://datasheets.maxim-ic.com/en/ds/MAX4335-MAX4338.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="MAX17501">
+<deviceset name="MAX17501" prefix="U">
 <gates>
 <gate name="G$1" symbol="MAX17501" x="0" y="0"/>
 </gates>
@@ -3685,12 +3685,12 @@ Source: http://datasheets.maxim-ic.com/en/ds/MAX4335-MAX4338.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="ABRACON_ASD">
+<deviceset name="OSC" prefix="U">
 <gates>
-<gate name="G$1" symbol="ABRACON_OSC" x="0" y="0"/>
+<gate name="G$1" symbol="OSC" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="ABRACON_2.5X2">
+<device name="" package="XTAL_2.5X2">
 <connects>
 <connect gate="G$1" pin="GND" pad="2"/>
 <connect gate="G$1" pin="OUT" pad="3"/>
@@ -4539,6 +4539,69 @@ wire to board 1.25 mm (.049 inch) pitch header</description>
 <text x="0" y="0" size="1" layer="25" font="vector" align="center">&gt;NAME</text>
 <text x="0" y="-1.5" size="1" layer="27" font="vector" align="center">&gt;VALUE</text>
 </package>
+<package name="R1210">
+<description>&lt;b&gt;RESISTOR&lt;/b&gt;</description>
+<wire x1="-0.913" y1="1.219" x2="0.939" y2="1.219" width="0.1524" layer="51"/>
+<wire x1="-0.913" y1="-1.219" x2="0.939" y2="-1.219" width="0.1524" layer="51"/>
+<wire x1="-2.473" y1="1.483" x2="2.473" y2="1.483" width="0.0508" layer="39"/>
+<wire x1="2.473" y1="1.483" x2="2.473" y2="-1.483" width="0.0508" layer="39"/>
+<wire x1="2.473" y1="-1.483" x2="-2.473" y2="-1.483" width="0.0508" layer="39"/>
+<wire x1="-2.473" y1="-1.483" x2="-2.473" y2="1.483" width="0.0508" layer="39"/>
+<smd name="1" x="-1.4" y="0" dx="1.6" dy="2.7" layer="1"/>
+<smd name="2" x="1.4" y="0" dx="1.6" dy="2.7" layer="1"/>
+<text x="0" y="0" size="1" layer="25" font="vector" align="center">&gt;NAME</text>
+<text x="0" y="-1.5" size="1" layer="27" font="vector" align="center">&gt;VALUE</text>
+<rectangle x1="-1.651" y1="-1.3081" x2="-0.9009" y2="1.2918" layer="51"/>
+<rectangle x1="0.9144" y1="-1.3081" x2="1.6645" y2="1.2918" layer="51"/>
+<rectangle x1="-0.3" y1="-0.8999" x2="0.3" y2="0.8999" layer="35"/>
+</package>
+<package name="R2512">
+<description>&lt;b&gt;RESISTOR&lt;/b&gt;</description>
+<wire x1="-2.362" y1="1.473" x2="2.387" y2="1.473" width="0.1524" layer="51"/>
+<wire x1="-2.362" y1="-1.473" x2="2.387" y2="-1.473" width="0.1524" layer="51"/>
+<wire x1="-3.973" y1="1.983" x2="3.973" y2="1.983" width="0.0508" layer="39"/>
+<wire x1="3.973" y1="1.983" x2="3.973" y2="-1.983" width="0.0508" layer="39"/>
+<wire x1="3.973" y1="-1.983" x2="-3.973" y2="-1.983" width="0.0508" layer="39"/>
+<wire x1="-3.973" y1="-1.983" x2="-3.973" y2="1.983" width="0.0508" layer="39"/>
+<smd name="1" x="-2.8" y="0" dx="1.8" dy="3.2" layer="1"/>
+<smd name="2" x="2.8" y="0" dx="1.8" dy="3.2" layer="1"/>
+<text x="0" y="0" size="1" layer="25" font="vector" align="center">&gt;NAME</text>
+<text x="0" y="-1.5" size="1" layer="27" font="vector" align="center">&gt;VALUE</text>
+<rectangle x1="-3.2004" y1="-1.5494" x2="-2.3505" y2="1.5507" layer="51"/>
+<rectangle x1="2.3622" y1="-1.5494" x2="3.2121" y2="1.5507" layer="51"/>
+<rectangle x1="-0.5001" y1="-1" x2="0.5001" y2="1" layer="35"/>
+</package>
+<package name="R2010">
+<description>&lt;b&gt;RESISTOR&lt;/b&gt;</description>
+<wire x1="-1.662" y1="1.245" x2="1.662" y2="1.245" width="0.1524" layer="51"/>
+<wire x1="-1.637" y1="-1.245" x2="1.687" y2="-1.245" width="0.1524" layer="51"/>
+<wire x1="-3.473" y1="1.483" x2="3.473" y2="1.483" width="0.0508" layer="39"/>
+<wire x1="3.473" y1="1.483" x2="3.473" y2="-1.483" width="0.0508" layer="39"/>
+<wire x1="3.473" y1="-1.483" x2="-3.473" y2="-1.483" width="0.0508" layer="39"/>
+<wire x1="-3.473" y1="-1.483" x2="-3.473" y2="1.483" width="0.0508" layer="39"/>
+<smd name="1" x="-2.2" y="0" dx="1.8" dy="2.7" layer="1"/>
+<smd name="2" x="2.2" y="0" dx="1.8" dy="2.7" layer="1"/>
+<text x="0" y="0" size="1" layer="25" font="vector" align="center">&gt;NAME</text>
+<text x="0" y="-1.5" size="1" layer="27" font="vector" align="center">&gt;VALUE</text>
+<rectangle x1="-2.4892" y1="-1.3208" x2="-1.6393" y2="1.3292" layer="51"/>
+<rectangle x1="1.651" y1="-1.3208" x2="2.5009" y2="1.3292" layer="51"/>
+</package>
+<package name="C1210">
+<description>&lt;b&gt;CAPACITOR&lt;/b&gt;</description>
+<wire x1="-2.473" y1="1.483" x2="2.473" y2="1.483" width="0.0508" layer="39"/>
+<wire x1="2.473" y1="-1.483" x2="-2.473" y2="-1.483" width="0.0508" layer="39"/>
+<wire x1="-2.473" y1="-1.483" x2="-2.473" y2="1.483" width="0.0508" layer="39"/>
+<wire x1="-0.9652" y1="1.2446" x2="0.9652" y2="1.2446" width="0.1016" layer="51"/>
+<wire x1="-0.9652" y1="-1.2446" x2="0.9652" y2="-1.2446" width="0.1016" layer="51"/>
+<wire x1="2.473" y1="1.483" x2="2.473" y2="-1.483" width="0.0508" layer="39"/>
+<smd name="1" x="-1.4" y="0" dx="1.6" dy="2.7" layer="1"/>
+<smd name="2" x="1.4" y="0" dx="1.6" dy="2.7" layer="1"/>
+<text x="0" y="0" size="1" layer="25" font="vector" align="center">&gt;NAME</text>
+<text x="0" y="-1.5" size="1" layer="27" font="vector" align="center">&gt;VALUE</text>
+<rectangle x1="-1.7018" y1="-1.2954" x2="-0.9517" y2="1.3045" layer="51"/>
+<rectangle x1="0.9517" y1="-1.3045" x2="1.7018" y2="1.2954" layer="51"/>
+<rectangle x1="-0.1999" y1="-0.4001" x2="0.1999" y2="0.4001" layer="35"/>
+</package>
 </packages>
 <symbols>
 <symbol name="R">
@@ -4618,11 +4681,38 @@ wire to board 1.25 mm (.049 inch) pitch header</description>
 <technology name=""/>
 </technologies>
 </device>
+<device name="1210" package="R1210">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="2512" package="R2512">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="2010" package="R2010">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
 </devices>
 </deviceset>
 <deviceset name="C" prefix="C" uservalue="yes">
 <gates>
-<gate name="G$1" symbol="C" x="0" y="0"/>
+<gate name="G$1" symbol="C" x="0" y="0" addlevel="always"/>
 </gates>
 <devices>
 <device name="0402" package="C0402">
@@ -4653,6 +4743,15 @@ wire to board 1.25 mm (.049 inch) pitch header</description>
 </technologies>
 </device>
 <device name="1206" package="C1206">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="1210" package="C1210">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
@@ -5416,7 +5515,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <part name="GND13" library="r2p_supply" deviceset="GND" device=""/>
 <part name="SOT1" library="r2p_ic" deviceset="MAX3051" device="EKA"/>
 <part name="U$1" library="r2p_pcb" deviceset="PCB_25X45" device=""/>
-<part name="U$5" library="r2p_ic" deviceset="ABRACON_ASD" device=""/>
+<part name="U$5" library="r2p_ic" deviceset="OSC" device=""/>
 <part name="+3V7" library="r2p_supply" deviceset="+3V3" device=""/>
 <part name="U$7" library="r2p_supply" deviceset="+VBUS" device=""/>
 <part name="U$8" library="r2p_supply" deviceset="+VBUS" device=""/>
